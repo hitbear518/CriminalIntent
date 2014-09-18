@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,17 +23,29 @@ import java.util.ArrayList;
 public class CrimeListFragment extends ListFragment {
 
 	private ArrayList<Crime> mCrimes;
+	private boolean mSubtitleVisible;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setHasOptionsMenu(true);
+		setRetainInstance(true);
+		mSubtitleVisible = false;
 
 		getActivity().setTitle(R.string.crimes_title);
 		mCrimes = CrimeLab.get(getActivity()).getCrimes();
 
 		CrimeAdapter adapter = new CrimeAdapter(mCrimes);
 		setListAdapter(adapter);
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		ActionBar actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
+		if (mSubtitleVisible) {
+			actionBar.setSubtitle(R.string.subtitle);
+		}
+		return super.onCreateView(inflater, container, savedInstanceState);
 	}
 
 	@Override
@@ -70,6 +85,10 @@ public class CrimeListFragment extends ListFragment {
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		super.onCreateOptionsMenu(menu, inflater);
 		inflater.inflate(R.menu.fragment_crime_list, menu);
+		MenuItem showSubtitle = menu.findItem(R.id.menu_item_show_subtitle);
+		if (mSubtitleVisible) {
+			showSubtitle.setTitle(R.string.hide_subtitle);
+		}
 	}
 
 	@Override
@@ -81,6 +100,18 @@ public class CrimeListFragment extends ListFragment {
 			Intent i = new Intent(getActivity(), CrimePagerActivity.class);
 			i.putExtra(CrimeFragment.EXTRA_CRIME_ID, crime.getId());
 			startActivityForResult(i, 0);
+			return true;
+		case R.id.menu_item_show_subtitle:
+			ActionBar actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
+			if (actionBar.getSubtitle() == null) {
+				actionBar.setSubtitle(R.string.subtitle);
+				mSubtitleVisible = true;
+				item.setTitle(R.string.hide_subtitle);
+			} else {
+				actionBar.setSubtitle(null);
+				mSubtitleVisible = false;
+				item.setTitle(R.string.show_subtitle);
+			}
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);

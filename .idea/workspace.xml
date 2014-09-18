@@ -69,10 +69,16 @@
       <file leaf-file-name="CrimeListFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/me/senwang/criminalintent/CrimeListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9259259" vertical-offset="247" max-vertical-offset="1976">
-              <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.7504873" vertical-offset="1306" max-vertical-offset="2850">
+              <caret line="89" column="56" selection-start-line="89" selection-start-column="56" selection-end-line="89" selection-end-column="56" />
               <folding>
-                <element signature="e#759#780#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#975#996#0" expanded="true" />
+                <element signature="e#1382#1399#0" expanded="true" />
+                <element signature="e#2658#2680#0" expanded="true" />
+                <element signature="e#3263#3280#0" expanded="true" />
+                <element signature="e#3330#3352#0" expanded="true" />
+                <element signature="e#3448#3470#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1173,11 +1179,11 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_date.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/me/senwang/criminalintent/DatePickerFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/fragment_crime_list.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/me/senwang/criminalintent/CrimeLab.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/me/senwang/criminalintent/CrimePagerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/me/senwang/criminalintent/CrimeFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/fragment_crime_list.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/me/senwang/criminalintent/CrimeListFragment.java" />
       </list>
     </option>
@@ -1233,7 +1239,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1340,11 +1347,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="criminalintent" />
+              <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CriminalIntent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CriminalIntent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1368,8 +1401,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1590,14 +1622,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933258" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22707888" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32703003" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39822024" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39822024" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2489339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39822024" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1607,7 +1639,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22732124" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1632,14 +1664,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/me/senwang/criminalintent/CrimeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="418" max-vertical-offset="1634">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/me/senwang/criminalintent/Crime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="950" max-vertical-offset="1064">
@@ -1661,7 +1685,13 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="494">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#759#780#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#975#996#0" expanded="true" />
+            <element signature="e#1382#1399#0" expanded="true" />
+            <element signature="e#2658#2680#0" expanded="true" />
+            <element signature="e#3263#3280#0" expanded="true" />
+            <element signature="e#3330#3352#0" expanded="true" />
+            <element signature="e#3448#3470#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1687,7 +1717,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="527">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="e#758#776#0" expanded="true" />
+            <element signature="e#758#776#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1697,7 +1727,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="527">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="e#758#776#0" expanded="true" />
+            <element signature="e#758#776#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2019,15 +2049,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34333733" vertical-offset="3324" max-vertical-offset="5168">
           <caret line="191" column="16" selection-start-line="191" selection-start-column="16" selection-end-line="191" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/extras/android/support/v4/src/java/android/support/v4/app/Fragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.016073478" vertical-offset="20686" max-vertical-offset="30248">
-          <caret line="1219" column="7" selection-start-line="1219" selection-start-column="7" selection-end-line="1219" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2035,10 +2056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="798">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#728#729#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2055,25 +2072,49 @@
         <state vertical-scroll-proportion="0.26176807" vertical-offset="0" max-vertical-offset="871">
           <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
           <folding>
-            <element signature="e#758#776#0" expanded="true" />
+            <element signature="e#758#776#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/fragment_crime_list.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding>
+            <element signature="e#443#466#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/sdk/extras/android/support/v4/src/java/android/support/v4/app/Fragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33295062" vertical-offset="20686" max-vertical-offset="30248">
+          <caret line="1237" column="16" selection-start-line="1237" selection-start-column="16" selection-end-line="1237" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/me/senwang/criminalintent/CrimeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="1862">
-          <caret line="76" column="12" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.78530425" vertical-offset="627" max-vertical-offset="1862">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/me/senwang/criminalintent/CrimeListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9259259" vertical-offset="247" max-vertical-offset="1976">
-          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.7504873" vertical-offset="1306" max-vertical-offset="2850">
+          <caret line="89" column="56" selection-start-line="89" selection-start-column="56" selection-end-line="89" selection-end-column="56" />
           <folding>
-            <element signature="e#759#780#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#975#996#0" expanded="true" />
+            <element signature="e#1382#1399#0" expanded="true" />
+            <element signature="e#2658#2680#0" expanded="true" />
+            <element signature="e#3263#3280#0" expanded="true" />
+            <element signature="e#3330#3352#0" expanded="true" />
+            <element signature="e#3448#3470#0" expanded="true" />
           </folding>
         </state>
       </provider>
