@@ -108,6 +108,12 @@ public class CrimeListFragment extends ListFragment {
 	}
 
 	@Override
+	public void onPause() {
+		super.onPause();
+		CrimeLab.get(getActivity()).saveCrimes();
+	}
+
+	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		Crime c = ((CrimeAdapter) getListAdapter()).getItem(position);
 
@@ -119,20 +125,20 @@ public class CrimeListFragment extends ListFragment {
 	@Override
 	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		Log.d(Utils.getTag(), "onActivityCreated");
+//		Log.d(Utils.getTag(), "onActivityCreated");
 	}
 
-	@Override
-	public void onStart() {
-		super.onStart();
-		Log.d(Utils.getTag(), "onStart");
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		Log.d(Utils.getTag(), "onResume");
-	}
+//	@Override
+//	public void onStart() {
+//		super.onStart();
+//		Log.d(Utils.getTag(), "onStart");
+//	}
+//
+//	@Override
+//	public void onResume() {
+//		super.onResume();
+//		Log.d(Utils.getTag(), "onResume");
+//	}
 
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
