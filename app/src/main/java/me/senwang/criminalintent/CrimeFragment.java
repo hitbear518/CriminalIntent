@@ -2,6 +2,7 @@ package me.senwang.criminalintent;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import java.util.Date;
 import java.util.UUID;
@@ -41,6 +43,7 @@ public class CrimeFragment extends Fragment {
 	}
 
 	private Crime mCrime;
+	private ImageButton mPhotoButton;
     private EditText mTitleField;
 	private Button mDateButton;
 	private CheckBox mSolvedCheckBox;
@@ -62,6 +65,21 @@ public class CrimeFragment extends Fragment {
 		}
 
         View v = inflater.inflate(R.layout.fragment_crime, container, false);
+
+		mPhotoButton = (ImageButton) v.findViewById(R.id.image_button);
+		mPhotoButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getActivity(), CrimeCameraActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		PackageManager pm = getActivity().getPackageManager();
+		if (!pm.hasSystemFeature(PackageManager.FEATURE_CAMERA) && !pm.hasSystemFeature(PackageManager.FEATURE_CAMERA_FRONT)) {
+			mPhotoButton.setEnabled(false);
+		}
+
         mTitleField = (EditText) v.findViewById(R.id.crime_title);
 		mTitleField.setText(mCrime.getTitle());
         mTitleField.addTextChangedListener(new TextWatcher() {
