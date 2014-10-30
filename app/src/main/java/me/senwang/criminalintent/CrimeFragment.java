@@ -51,6 +51,10 @@ public class CrimeFragment extends Fragment {
         return fragment;
     }
 
+	public interface CallBack {
+		public void onCrimeUpdated(Crime crime);
+	}
+
     private Crime mCrime;
     private ImageButton mPhotoButton;
     private EditText mTitleField;
@@ -58,8 +62,23 @@ public class CrimeFragment extends Fragment {
     private CheckBox mSolvedCheckBox;
     private ImageView mPhotoView;
 	private Button mSuspectButton;
+	private CallBack mCallBack;
 
-    @Override
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		if (activity instanceof CallBack) {
+			mCallBack = (CallBack) activity;
+		}
+	}
+
+	@Override
+	public void onDetach() {
+		super.onDetach();
+		mCallBack = null;
+	}
+
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -114,6 +133,9 @@ public class CrimeFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
                 mCrime.setTitle(charSequence.toString());
+				if (mCallBack != null) {
+					mCallBack.onCrimeUpdated(mCrime);
+				}
             }
 
             @Override
@@ -139,6 +161,9 @@ public class CrimeFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mCrime.setSolved(isChecked);
+				if (mCallBack != null) {
+					mCallBack.onCrimeUpdated(mCrime);
+				}
             }
         });
 
@@ -179,12 +204,18 @@ public class CrimeFragment extends Fragment {
             Date date = (Date) data.getSerializableExtra(DatePickerFragment.EXTRA_DATE);
             mCrime.setDate(date);
             updateDate();
+			if (mCallBack != null) {
+				mCallBack.onCrimeUpdated(mCrime);
+			}
         } else if (requestCode == REQUEST_PHOTO) {
             String filename = data.getStringExtra(CrimeCameraFragment.EXTRA_PHOTO_FILENAME);
             if (filename != null) {
                 Photo p = new Photo(filename);
                 mCrime.setPhoto(p);
                 showPhoto();
+				if (mCallBack != null) {
+					mCallBack.onCrimeUpdated(mCrime);
+				}
             }
         } else if (requestCode == REQUEST_CONTACT) {
 			Uri contactUri = data.getData();
@@ -201,6 +232,9 @@ public class CrimeFragment extends Fragment {
 			mCrime.setSuspect(suspect);
 			mSuspectButton.setText(suspect);
 			c.close();
+			if (mCallBack != null) {
+				mCallBack.onCrimeUpdated(mCrime);
+			}
 		}
     }
 

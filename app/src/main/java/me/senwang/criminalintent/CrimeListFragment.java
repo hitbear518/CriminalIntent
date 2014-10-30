@@ -1,15 +1,13 @@
 package me.senwang.criminalintent;
 
 import android.annotation.TargetApi;
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.view.ActionMode;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -28,9 +26,28 @@ import java.util.ArrayList;
 
 public class CrimeListFragment extends ListFragment {
 
+	public interface CallBack {
+		public void onCrimeSelected(Crime crime);
+	}
+
 	private ArrayList<Crime> mCrimes;
 	private boolean mSubtitleVisible;
 	private ActionMode mActionMode;
+	private CallBack mCallBack;
+
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		if (activity instanceof CallBack) {
+			mCallBack = (CallBack) activity;
+		}
+	}
+
+	@Override
+	public void onDetach() {
+		super.onDetach();
+		mCallBack = null;
+	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -116,34 +133,16 @@ public class CrimeListFragment extends ListFragment {
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		Crime c = ((CrimeAdapter) getListAdapter()).getItem(position);
-
-		Intent i = new Intent(getActivity(), CrimePagerActivity.class);
-		i.putExtra(CrimeFragment.EXTRA_CRIME_ID, c.getId());
-		startActivityForResult(i, 0);
+		if (mCallBack != null) {
+			mCallBack.onCrimeSelected(c);
+		}
 	}
 
-	@Override
-	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-//		Log.d(Utils.getTag(), "onActivityCreated");
-	}
-
-//	@Override
-//	public void onStart() {
-//		super.onStart();
-//		Log.d(Utils.getTag(), "onStart");
-//	}
-//
-//	@Override
-//	public void onResume() {
-//		super.onResume();
-//		Log.d(Utils.getTag(), "onResume");
-//	}
 
 	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+	public void onResume() {
+		super.onResume();
 		((CrimeAdapter) getListAdapter()).notifyDataSetChanged();
-		Log.d(Utils.getTag(), "onActivityResult");
 	}
 
 	@Override
@@ -162,9 +161,8 @@ public class CrimeListFragment extends ListFragment {
 			case R.id.menu_item_new_crime:
 				Crime crime = new Crime();
 				CrimeLab.get(getActivity()).addCrime(crime);
-				Intent i = new Intent(getActivity(), CrimePagerActivity.class);
-				i.putExtra(CrimeFragment.EXTRA_CRIME_ID, crime.getId());
-				startActivityForResult(i, 0);
+				((CrimeAdapter) getListAdapter()).notifyDataSetChanged();
+				mCallBack.onCrimeSelected(crime);
 				return true;
 			case R.id.menu_item_show_subtitle:
 				ActionBar actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
@@ -203,6 +201,10 @@ public class CrimeListFragment extends ListFragment {
 			default:
 				return super.onContextItemSelected(item);
 		}
+	}
+
+	public void updateUI() {
+		((CrimeAdapter) getListAdapter()).notifyDataSetChanged();
 	}
 
 	private class CrimeAdapter extends ArrayAdapter<Crime> {
